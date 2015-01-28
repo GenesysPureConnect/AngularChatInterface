@@ -1,0 +1,51 @@
+.ic-message{
+	font-style:italic;
+	font-weight:bold;
+	color:#BABABA
+
+
+}
+.user-message{
+
+
+}
+
+.displayName{
+
+	padding-right:5px;
+}
+
+.typing-indicator{
+
+	font-style:italic;
+	color:#BABABA
+
+
+}
+.user-input{
+border-right:1px solid black;
+border-left:1px solid black;
+border-top:none;
+border-bottom:1px solid black;
+margin-left:0px;
+
+}
+
+.inputnostyle, .inputnostyle:focus{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+	border: none !important;
+border-color: transparent !important;
+height:34px;
+outline:0;
+}
+
+.messageHolder{
+	border:1px solid black;
+	height:600px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	word-wrap:break-word;
+
+}
