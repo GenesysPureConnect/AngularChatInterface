@@ -1,0 +1,4 @@
+<div  class="messageHolder" >
+	<i3chat-message  ng-repeat="event in events | filter:{type:'text'}" data-event="event"></i3chat-message>
+	<i3chat-typing-indicator showindicator="event.value" ng-repeat="event in events | filter:{type:'typingIndicator'} | limitTo:-1"></i3chat-typing-indicator>
+</div>
