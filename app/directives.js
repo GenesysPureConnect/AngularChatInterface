@@ -13,7 +13,7 @@ myDirectives.directive('i3chat',function(){
 
 			$scope.$watch(
 				function(){
-					return chatService.activeChatEvents; 
+					return chatService.activeChatEvents;
 				}
 			,
 				function(){
@@ -23,26 +23,15 @@ myDirectives.directive('i3chat',function(){
 			/*get the active chat information*/
 			$scope.$watch(
 				function(){
-					return chatService.activeChat; 
+					return chatService.activeChat;
 				}
 			,
 				function(){
 					$scope.activeChat = chatService.activeChat;
 				}
 			);
-			
-			
-			
-		
-			
-		
 		},
-		
-	
 	};
-
-
-
 });
 
 myDirectives.directive('i3chatHeader',function(){
@@ -50,10 +39,7 @@ myDirectives.directive('i3chatHeader',function(){
 		restrict: 'AE',
 		replace: 'true',
 		templateUrl: 'templates/i3chat-header.html'
-
-
 	}
-
 });
 
 
@@ -65,12 +51,7 @@ myDirectives.directive('i3chatMessage',function(){
 		scope:{
 			'event':'='
 		}
-		
-	
 	};
-
-
-
 });
 
 myDirectives.directive('i3chatTypingIndicator',function(){
@@ -81,12 +62,7 @@ myDirectives.directive('i3chatTypingIndicator',function(){
 		scope:{
 			'showindicator':'='
 		}
-		
-	
 	};
-
-
-
 });
 
 myDirectives.directive('i3chatSignonForm',function(){
@@ -99,22 +75,14 @@ myDirectives.directive('i3chatSignonForm',function(){
 		$scope.endChat = function(){
 
 				chatService.endChat();
-			
+
 		}
 		$scope.sendChat = function(){
 				chatService.sendMessage($scope.mytext);
 				$scope.mytext = '';
 			}
-		
-		
-		chatService.getAgentsAvailable();
 		}
-		
-	
 	};
-
-
-
 });
 
 myDirectives.directive('i3chatUserInput',function(){
@@ -123,32 +91,35 @@ myDirectives.directive('i3chatUserInput',function(){
 		replace: 'true',
 		templateUrl: 'templates/i3chat-user-input.html',
 		controller: function($scope,chatService){
-		
+			$scope.name = localStorage["name"];
+			$scope.server = localStorage["server"];
+			$scope.workgroup = localStorage["workgroup"];
+
 		$scope.startChat = function(){
+
+				localStorage["name"] = $scope.name;
+				localStorage["server"] = $scope.server;
+				localStorage["workgroup"] = $scope.workgroup;
+
 				participant = {
 					"name": $scope.name,
 					"credentials":null
 				}
-				chatService.startChat(participant,'Accounting').success(function(data){
+				chatService.startChat(participant,$scope.workgroup, $scope.server).success(function(data){
 					//$scope.status =data.chat.status.type;
 				});
-		
+
 			}
 		}
-		
-	
 	};
-
-
-
 });
 
 myDirectives.directive('i3chatBody',function(){
 	return {
 		restrict: 'AE',
 		replace: 'true',
-		templateUrl: 'templates/i3chat-body.html'		
-	
+		templateUrl: 'templates/i3chat-body.html'
+
 	};
 
 
@@ -159,7 +130,7 @@ myDirectives.directive('i3chatMessageHolder',function(){
 		restrict: 'AE',
 		replace: 'true',
 		templateUrl: 'templates/i3chat-message-holder.html'
-	
+
 	};
 
 
