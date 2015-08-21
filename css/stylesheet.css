@@ -1,34 +1,45 @@
-.ic-message{
+.message-container {
+	margin-bottom: 15px;
+}
+
+.message-holder {
+	border:1px solid black;
+	height:600px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	word-wrap:break-word;
+}
+
+.ic-message {
 	font-style:italic;
 	font-weight:bold;
-	color:#BABABA
-
-
-}
-.user-message{
-
-
+	color:#BABABA;
 }
 
-.displayName{
-
+.display-name {
 	padding-right:5px;
 }
 
-.typing-indicator{
-
+.typing-indicator {
 	font-style:italic;
-	color:#BABABA
-
-
+	color:#BABABA;
 }
-.user-input{
-border-right:1px solid black;
-border-left:1px solid black;
-border-top:none;
-border-bottom:1px solid black;
-margin-left:0px;
 
+.message-input-box {
+	border: 1px solid #333;
+	border-right: none;
+	border-top: none;
+}
+
+.message-input-box > input {
+	width: 100%;
+}
+
+.message-input-buttons {
+	border: 1px solid #333;
+	border-left: none;
+	border-top: none;
+	text-align: right;
 }
 
 .inputnostyle, .inputnostyle:focus{
@@ -36,16 +47,7 @@ margin-left:0px;
     -moz-appearance:none;
     appearance:none;
 	border: none !important;
-border-color: transparent !important;
-height:34px;
-outline:0;
-}
-
-.messageHolder{
-	border:1px solid black;
-	height:600px;
-	overflow-y:scroll;
-	overflow-x:hidden;
-	word-wrap:break-word;
-
+	border-color: transparent !important;
+	height:34px;
+	outline:0;
 }

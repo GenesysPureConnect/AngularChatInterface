@@ -1,12 +1,11 @@
-<div  class="row user-input">
-	<div class="col-md-10">
-		<input class="col-md-12 inputnostyle" ng-model="mytext" data-on-enter="sendChat()"/>
+<div class="message-input">
+	<div class="message-input-box col-md-10 col-sm-9 col-xs-8">
+		<input id="chatInput" class="inputnostyle" ng-model="mytext" data-on-enter="sendChat()" ng-focus="setTyping(true)" ng-blur="setTyping(false)"/>
 	</div>
-	<div class="col-md-2">
-		<button type="button" class="btn btn-success col-md-6" ng-click="sendChat()" >Send</button>
-		<button type="button" class="btn btn-danger col-md-6" ng-click="endChat()">Exit</button>
+	<div class="message-input-buttons col-md-2 col-sm-3 col-xs-4">
+		<div class="row">
+			<button type="button" class="btn btn-success col-xs-6" ng-click="sendChat()">Send</button>
+			<button type="button" class="btn btn-danger col-xs-6" ng-click="endChat()">Exit</button>
+		</div>
 	</div>
-	
-		
-
 </div>
