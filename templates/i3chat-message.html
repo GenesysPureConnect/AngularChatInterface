@@ -1,4 +1,4 @@
-<div class="row message" style="margin-left:20px;">
-	<div class="user-message"  ng-if="event.displayName != 'IC'"><label class="displayName">{{event.displayName}}:</label>{{event.value}}</div>
-	<div class="ic-message"  ng-if="event.displayName == 'IC'"><span class="glyphicon glyphicon-play" aria-hidden="true"></span>{{event.value}}</div>
+<div class="message">
+	<div class="user-message" ng-if="event.displayName != 'IC'"><label class="display-name">{{event.displayName}}:</label>{{event.value}}</div>
+	<div class="ic-message" ng-if="event.displayName == 'IC'"><span class="glyphicon glyphicon-play" aria-hidden="true"></span>{{event.value}}</div>
 </div>
