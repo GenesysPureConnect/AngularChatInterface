@@ -4,9 +4,10 @@
 
 .message-holder {
 	border:1px solid black;
-	height:600px;
+	height:450px;
 	overflow-y:scroll;
 	overflow-x:hidden;
+	padding:15px;
 	word-wrap:break-word;
 }
 
@@ -40,6 +41,10 @@
 	border-left: none;
 	border-top: none;
 	text-align: right;
+}
+
+.message-input-buttons .btn {
+	border-radius: 0;
 }
 
 .inputnostyle, .inputnostyle:focus{
