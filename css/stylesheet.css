@@ -11,6 +11,11 @@
 	word-wrap:break-word;
 }
 
+.i3chat span {
+	font-size: .65em;
+	padding-left: 10px;
+}
+
 .ic-message {
 	font-style:italic;
 	font-weight:bold;
@@ -24,6 +29,11 @@
 .typing-indicator {
 	font-style:italic;
 	color:#BABABA;
+}
+
+.message-input {
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .message-input-box {
@@ -55,4 +65,14 @@
 	border-color: transparent !important;
 	height:34px;
 	outline:0;
+}
+
+.i3chat {
+	max-width: 400px;
+}
+
+.panel-heading {
+	margin: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
 }

@@ -14,17 +14,26 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 <body ng-controller="MainController">
     <div class="container-fluid">
+        <div class="container-fluid">
+            <h2>
+                I3 Chat Widget
+                <div style="margin-left: 15px;" class="btn btn-default" onclick="showChat()">Reopen Chat</div>
+            </h2>
+        </div>
         <i3chat></i3chat>
     </div>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+
+    <!-- jQueryUI (Adds ability for draggable) -->
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
     <!-- Angular CDN -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.min.js"></script>
@@ -35,5 +44,11 @@
     <script src="app/controllers.js"></script>
     <script src="app/services.js"></script>
     <script src="app/directives.js"></script>
+    <script>
+        showChat = function() {
+            document.getElementsByClassName('i3chat')[0].style.display = '';
+        };
+
+    </script>
 </body>
 </html>

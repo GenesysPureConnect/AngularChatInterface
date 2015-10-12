@@ -1,6 +1,6 @@
-<div class="i3chat">
-	<i3chat-header></i3chat-header>
-	<div class="message-container clearfix">
+<div class="i3chat panel panel-default">
+	<i3chat-header class="panel-heading"></i3chat-header>
+	<div class="message-container clearfix panel-body" ng-show="minimized">
 		<i3chat-signon-form ng-show="activeChat == null"></i3chat-signon-form>
 		<i3chat-body ng-show="activeChat != null"><i3chat-body>
 	</div>
