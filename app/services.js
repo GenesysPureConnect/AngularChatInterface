@@ -5,6 +5,7 @@ myServices.service('chatService', function($http, $q, $timeout){
     chatService.serverConfiguration = {};
     chatService.activeChat = null;
     chatService.activeChatEvents = [];
+    chatService.minimized = false;
 
     chatService.startChat = function(participantInfo, workgroup, server) {
         chatService.baseURL = 'webtools/' + server + '/websvcs/'; // 'http://morbo:8114/websvcs/';
@@ -21,6 +22,16 @@ myServices.service('chatService', function($http, $q, $timeout){
         var request = $http.post(chatService.baseURL + 'chat/start', data);
 
         return (request.success(saveChatInfo));
+    };
+
+    chatService.minimizeChat = function() {
+        chatService.minimized = !chatService.minimized;
+    };
+
+    chatService.closeChat = function() {
+        if(chatService.activeChat != null)
+            chatService.endChat();
+        document.getElementsByClassName('i3chat')[0].style.display = 'none';
     };
 
     chatService.endChat = function() {
@@ -53,6 +64,7 @@ myServices.service('chatService', function($http, $q, $timeout){
         request.success(function(data) {
             if (data.chat.events.length > 0) {
                 chatService.activeChatEvents = chatService.activeChatEvents.concat(data.chat.events);
+                scrollDown();
             }
             $timeout(chatService.poll, data.chat.pollWaitSuggestion);
         });
@@ -104,5 +116,10 @@ myServices.service('chatService', function($http, $q, $timeout){
     // from the API response payload.
     function handleSuccess(response) {
         return (response.data);
+    }
+
+    function scrollDown() {
+        var el = $('.message-holder');
+        el.animate({ scrollTop: el[0].scrollHeight}, 1000);
     }
 });

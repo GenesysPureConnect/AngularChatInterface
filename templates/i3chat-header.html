@@ -1,1 +1,8 @@
-<h1>Welcome to Chat!</h1>
+<div class="row">
+    <h3>Welcome to Chat!
+        <span class="glyphicon glyphicon-remove pull-right" ng-click="closeChat()" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-minus pull-right" ng-click="minimizeChat()" ng-show="minimized" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon glyphicon-plus pull-right" ng-click="minimizeChat()" ng-show="!minimized" aria-hidden="true"></span>
+    </h3>
+</div>
+

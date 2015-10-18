@@ -1,0 +1,32 @@
+{
+  "name": "inin-angular-chat",
+  "version": "0.0.3",
+  "description": "An example custom client for interactive's web chat",
+  "author": "Michael Sickles <Michael.Sickles@inin.com>",
+  "contributors": [{
+    "name": "Carl Fluke",
+    "email": "Carl.Fluke@inin.com"
+  }, {
+    "name": "Kevin Glinski",
+    "email": "Kevin.Glinski@inin.com"
+  }],
+  "scripts": {
+    "start": "node index.js",
+    "predeploy": "echo im about to deploy",
+    "postdeploy": "echo ive deployed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/InteractiveIntelligence/AngularChatInterface"
+  },
+  "bugs": {
+    "url": "https://github.com/InteractiveIntelligence/AngularChatInterface/issues"
+  },
+  "dependencies": {
+    "express": "4.2.x"
+  },
+  "devDependencies": {
+
+  },
+  "license": "MIT"
+}

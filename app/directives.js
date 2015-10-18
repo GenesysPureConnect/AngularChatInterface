@@ -9,6 +9,7 @@ myDirectives.directive('i3chat', function() {
 			$scope.chatting = false;
 			$scope.activeChat = null;
 			$scope.events = [];
+			$scope.minimized = false;
 
 			$scope.$watch(function() {
 				return chatService.activeChatEvents;
@@ -22,6 +23,17 @@ myDirectives.directive('i3chat', function() {
 			}, function() {
 				$scope.activeChat = chatService.activeChat;
 			});
+
+			$scope.$watch(function() {
+				return chatService.minimized;
+			}, function() {
+				$scope.minimized = chatService.minimized;
+			});
+
+			$('.i3chat').draggable({
+					containment: "window"
+				}
+			);
 		}
 	};
 });
@@ -30,7 +42,17 @@ myDirectives.directive('i3chatHeader', function() {
 	return {
 		restrict: 'AE',
 		replace: 'true',
-		templateUrl: 'templates/i3chat-header.html'
+		templateUrl: 'templates/i3chat-header.html',
+		controller: function($scope, chatService) {
+			$scope.minimizeChat = chatService.minimizeChat;
+			$scope.closeChat = chatService.closeChat;
+			$scope.minimized = false;
+			$scope.$watch(function() {
+				return chatService.minimized;
+			}, function() {
+				$scope.minimized = chatService.minimized;
+			});
+		}
 	};
 });
 
